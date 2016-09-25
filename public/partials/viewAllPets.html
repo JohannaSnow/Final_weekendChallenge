@@ -1,0 +1,12 @@
+<div ng-controller="AllPetsController">
+   <div class="container" >
+       <div ng-repeat="pet in allPets">
+         <img src="{{ pet.petPicURL }}" />
+           <!-- <a href="{{ pet.petPicURL }}"> Pet Pic </a> -->
+           <p>Name is: {{ pet.pet_name}}</p>
+           <p>Age: {{ pet.age}}</p>
+           <!-- <p>It is a very cute: {{ pet.animal}}</p> -->
+           -------------------------------------------
+       </div>
+   </div>
+ </div>

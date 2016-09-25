@@ -2,7 +2,7 @@ console.log('js sourced');
 
 var myApp = angular.module('myApp', ['ngRoute']);
 
-myApp.controller('piPetsHome',['$scope',function($scope){
+myApp.controller('petsHome',['$scope',function($scope){
   console.log('NG');
 
 }]);
@@ -14,13 +14,13 @@ myApp.config(['$routeProvider',function ($routeProvider){
       templateUrl: "partials/home.html",
       controller: "homeController"
     }).
-    when ("/addPet",
+    when ("/PetController",
       {templateUrl: "partials/addPet.html",
-      controller: "addPetController"
+      controller: "PetController"
     }).
     when ("/viewAllPets",
       {templateUrl: "partials/viewAllPets.html",
-      controller: "viewAllPetsController"
+      controller: "allPetsController"
     }).
     otherwise({
 
