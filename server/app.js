@@ -4,17 +4,22 @@ var urlencodedParser = bodyParser.urlencoded( { extended: true } );
 var path = require('path');
 var app = express();
 var mongoose = require('mongoose');
-var portDecision = process.env.PORT || 8081;
+var PetModel = require('../models.PetModel'); //not necessary to have this here, need it in routers though!
+var portDecision = process.env.PORT || 8000;
+
+//routes
+
+var indexRouter = require('../routers/indexRouter');
+var petRouter = require('../routers/pets');
+app.use('/pets', petRouter);
 
 
 //json body parser
 app.use(bodyParser.json());
 
-// //routes ()
-// app.use
 
 //data base connection
-var mongoURI = "mongodb://localhost:27017/piPets";
+var mongoURI = "mongodb://localhost:27017/Pets";
 mongoose.connect(mongoURI);
 
 
@@ -31,7 +36,7 @@ res.sendFile( path.resolve( 'public/index.html' ) );
 
 app.get('/viewAll', function (req,res){
 console.log('in get all router ');
-newPet.find({}, function(err, PetResults) {
+petModel.find({}, function(err, PetResults) {
     if(err){
       console.log('error occurred:', err);
       res.sendStatus(500);
