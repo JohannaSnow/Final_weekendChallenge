@@ -7,7 +7,7 @@ myApp.controller('petsHome',['$scope',function($scope){
 
 }]);
 
-
+//basic home page
 myApp.config(['$routeProvider',function ($routeProvider){
     $routeProvider.
     when ('/home',{

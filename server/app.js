@@ -1,23 +1,17 @@
-var mongoose = require('mongoose');
 var express = require('express');
 var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded( { extended: true } );
 var path = require('path');
 var app = express();
+var mongoose = require('mongoose');
 var portDecision = process.env.PORT || 8081;
-// routes
-// var index = require('./routes/index');
-// var allPets = require('./routes/allPets');
-// var savePets = require('./routes/savePets');
 
 
 //json body parser
 app.use(bodyParser.json());
 
-// //routes
-// app.use('/', index);
-// app.use('/viewAll', allPets)
-// app.use('/savePets', savePets);
+// //routes ()
+// app.use
 
 //data base connection
 var mongoURI = "mongodb://localhost:27017/piPets";
@@ -26,7 +20,7 @@ mongoose.connect(mongoURI);
 
 //listen and port decision
 app.listen(portDecision,function(){
-console.log(' ', portDecision);
+console.log('Listening!', portDecision);
 });
 
 // // app.get --  serves the index -- get params
@@ -53,7 +47,7 @@ var newPet = require('../models/addPet');
 app.post('/savePet', function(req,res){
   console.log('in add pet post route');
 
-  var newPet = newPet(req.body);
+  var addPet = newPet(req.body);
   console.log('addPet : ', req.body);
 
   addPet.save(function(err){

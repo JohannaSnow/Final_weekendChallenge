@@ -1,8 +1,6 @@
 var router = require('express').Router();
 var newPet = require('../../models/addPet');
 
-
-
 router.get('/viewAll', function(req, res) {
     console.log('in get all router ');
     newPet.find({}, function(err, PetResults) {
@@ -28,7 +26,6 @@ router.get('/viewAll', function(req, res) {
         }
     });
 });
-
 
 router.post('/savePet', function(req, res) {
     console.log(' add pet post route');
