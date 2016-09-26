@@ -1,2 +1,9 @@
-add a pet
-      <input type="text" ng-model="petName" placeholder="Pet Name" required>
+<p>
+   Add a new pet here on this page!
+</p>
+
+    <input type="text" ng-model="petName" placeholder="Pet Name" required>
+   <input type="text" ng-model="animalType" placeholder="Animal Type" required>
+   <input type="text" ng-model="petAge" placeholder="Age of pet" required>
+   <input type="text" ng-model="petPic" placeholder="Picture URL">
+   <button type="button" ng-click="addNewPet()"> Add this pet </button>
